@@ -1,295 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Zita Ye</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zita Ye - Portfolio</title>
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Itim:400");
+        @import url("https://fonts.googleapis.com/css?family=Itim:400");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Itim', sans-serif;
+            background-color: white;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1440px;
+            height: 52px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 64px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-items {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-item {
+            font-size: 16px;
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .nav-item:hover {
+            background-color: #f3f4f6;
+        }
+        
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            max-width: 1440px;
+            height: 1024px;
+            background: #e1edf1 url('/bg.svg') center/cover no-repeat;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .profile-info {
+            position: absolute;
+            top: 512px;
+            right: 227px;
+            width: 169px;
+            height: 135px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .profile-name {
+            font-size: 50px;
+            color: black;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .social-links img {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
+        
+        .profile-photo {
+            position: absolute;
+            top: calc(50% - 204px);
+            right: 320px;
+            width: 193px;
+            height: 193px;
+            background: white;
+            border-radius: 96.5px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-photo img {
+            width: 151px;
+            height: 151px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .about-section {
+            position: absolute;
+            top: 175px;
+            left: 11%;
+            width: 644px;
+        }
+        
+        .section-title {
+            font-size: 50px;
+            color: black;
+            margin-bottom: 12px;
+        }
+        
+        .about-text {
+            font-size: 24px;
+            color: black;
+            line-height: 1.4;
+        }
+        
+        .skills-section {
+            position: absolute;
+            top: 486px;
+            left: 11%;
+            width: 448px;
+            height: 277px;
+        }
+        
+        .skill-badge {
+            position: absolute;
+            background: white;
+            border: 2px solid black;
+            border-radius: 30px;
+            padding: 10px 20px;
+            box-shadow: 5px 5px 4px rgba(0,0,0,0.25);
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 20px;
+            color: black;
+        }
+        
+        .skill-badge:hover {
+            background-color: #f9fafb;
+        }
+        
+        .skill-1 { top: 94px; left: 9px; }
+        .skill-2 { top: 94px; left: 196px; }
+        .skill-3 { top: 94px; left: 345px; }
+        .skill-4 { top: 163px; left: 9px; }
+        .skill-5 { top: 163px; left: 224px; }
+        .skill-6 { top: 232px; left: 9px; }
+        .skill-7 { top: 232px; left: 262px; }
+        
+        /* Work Experience Section */
+        .work-section {
+            width: 100%;
+            max-width: 1440px;
+            height: 1024px;
+            background: #e1edf1;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .work-cards {
+            position: absolute;
+            top: 54px;
+            left: 8.4%;
+            width: 83.2%;
+            height: 878px;
+            display: flex;
+            gap: 74px;
+            justify-content: center;
+        }
+        
+        .work-card {
+            width: 350px;
+            height: 600px;
+            background: white;
+            border-radius: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 16px;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+        
+        .work-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .work-card:nth-child(2) {
+            margin-top: 278px;
+        }
+        
+        .work-card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 22px;
+            height: 100%;
+        }
+        
+        .work-logo {
+            width: 110px;
+            height: 108px;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+        
+        .work-title {
+            font-size: 32px;
+            color: black;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .work-period {
+            font-size: 24px;
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .work-description {
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            line-height: 1.4;
+            padding: 0 20px;
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            width: 100%;
+            max-width: 1440px;
+            height: 2048px;
+            background: #e1edf1;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .projects-bg {
+            position: absolute;
+            top: 243px;
+            left: 0;
+            width: 100%;
+            height: 1486px;
+            object-fit: cover;
+        }
+        
+        .project-card {
+            position: absolute;
+            background: white;
+            border-radius: 35px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.35);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-1 {
+            top: 168px;
+            left: 17%;
+            width: 68.7%;
+            height: 382px;
+            background: rgba(255,255,255,0.5);
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            gap: 24px;
+        }
+        
+        .project-1-text {
+            flex: 1;
+            font-size: 20px;
+            color: black;
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .project-1-image {
+            width: 433px;
+            height: 382px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        
+        .project-2 {
+            top: 635px;
+            left: 17%;
+            width: 550px;
+            height: 390px;
+        }
+        
+        .project-3 {
+            top: 1063px;
+            right: 17%;
+            width: 550px;
+            height: 390px;
+        }
+        
+        .project-4 {
+            top: 1492px;
+            left: 17%;
+            width: 550px;
+            height: 390px;
+        }
+        
+        .cat-decoration {
+            position: absolute;
+            top: 1626px;
+            right: 10%;
+            width: 355px;
+            height: 276px;
+            object-fit: cover;
+        }
+        
+        /* Decorative elements */
+        .vector-1 {
+            position: absolute;
+            top: 129px;
+            left: 29.7%;
+            width: 233px;
+            height: 216px;
+        }
+        
+        .vector-2 {
+            position: absolute;
+            top: 653px;
+            right: 39%;
+            width: 351px;
+            height: 267px;
+        }
+        
+        .card-decoration {
+            position: absolute;
+            top: 467px;
+            left: 8.4%;
+            width: 518px;
+            height: 465px;
+            object-fit: cover;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1440px) {
+            .container, .hero, .work-section, .projects-section {
+                width: 100%;
+            }
+            
+            .nav {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 80px 20px 40px;
+            }
+            
+            .profile-info, .profile-photo, .about-section, .skills-section {
+                position: relative;
+                left: auto;
+                right: auto;
+                top: auto;
+                margin: 20px auto;
+                text-align: center;
+            }
+            
+            .work-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                position: relative;
+                top: 40px;
+                left: auto;
+                width: 100%;
+                padding: 0 20px;
+            }
+            
+            .work-card:nth-child(2) {
+                margin-top: 0;
+            }
+            
+            .project-1 {
+                flex-direction: column;
+                height: auto;
+                left: 5%;
+                width: 90%;
+                padding: 20px;
+            }
+            
+            .project-1-image {
+                width: 100%;
+                height: 300px;
+            }
+            
+            .project-2, .project-3, .project-4 {
+                left: 5%;
+                right: auto;
+                width: 90%;
+            }
+        }
     </style>
-    <link href="tailwind.css" rel="stylesheet" />
-    <link href="tailwind.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="app">
-
-
-export const Desktop = (): JSX.Element => {
-  const skills = [
-    { text: "Graphic Design", className: "top-[94px] left-[9px]" },
-    { text: "Animation", className: "top-[94px] left-[196px]" },
-    { text: "UI Design", className: "top-[94px] left-[345px]" },
-    { text: "Digital Marketing", className: "top-[163px] left-[9px]" },
-    { text: "Photography&Editing", className: "top-[163px] left-56" },
-    { text: "Product Management", className: "top-[232px] left-[9px]" },
-    { text: "Video Editing", className: "top-[232px] left-[262px]" },
-  ];
-
-  const workExperience = [
-    {
-      logo: "/pb1.png",
-      title: "Service Administrator",
-      period: "2022-present",
-      description:
-        "Developed pricing strategies and managed inventory for Apple and Samsung parts. Oversaw supplier relations and financial tracking, optimizing operations through effective stock coordination. Analyzed financial reports to boost performance. Designed marketing materials for New Zealand branches, directed event photography, and coordinated with insurance companies on invoicing and claims.",
-      className: "w-[350px] h-[600px]",
-    },
-    {
-      logo: "/nannanxi1-1.png",
-      title: "Art & Design Teacher",
-      period: "2019 - 2022",
-      description:
-        "Developed and delivered customized art education programs for diverse age groups, facilitating instruction in creative thinking, composition, and design principles. Offered specialized instruction for children with special needs and conducted live online streaming classes for students.",
-      className: "mt-[278px] w-[350px] h-[600px]",
-    },
-    {
-      logo: "/1on11-1.png",
-      title: "Graphic Designer",
-      period: "2018 - 2019",
-      description:
-        "Crafted publicity posters, digital assets, and marketing visuals for various campaigns.Spearheaded online promotions and compiled marketing reports to evaluate campaign effectiveness.Worked closely with manufacturers and activity providers to implement brand events and promotional strategies.",
-      className: "w-[350px] h-[600px]",
-    },
-  ];
-
-  const navigationItems = [
-    { text: "About" },
-    { text: "Work" },
-    { text: "Projects" },
-  ];
-
-  return (
-    <div className="bg-white w-full min-h-screen flex flex-col items-center">
-      {/* Hero Section */}
-      <section className="z-[3] w-full max-w-[1440px] h-[1024px] relative bg-[url(/bg.svg)] bg-[#e1edf1] bg-[length:100%_100%] bg-[position:center] bg-no-repeat">
-        {/* Profile Info */}
-        <div className="absolute top-[512px] right-[227px] w-[169px] h-[135px] flex flex-col items-center gap-2.5">
-          <div className="inline-flex h-20 w-[169px] relative items-center justify-center gap-2.5 p-2.5">
-            <h1 className="relative w-fit mt-[-1.00px] [font-family:'Itim',Helvetica] font-normal text-black text-[50px] tracking-[0] leading-[normal] whitespace-nowrap">
-              Zita Ye
-            </h1>
-          </div>
-
-          <div className="ml-0.5 h-[45px] w-[134px] relative">
-            <img
-              className="absolute -top-0.5 left-[89px] w-[60px] h-[60px] object-cover"
-              alt="Linkedin"
-              src="/linkedin.png"
-            />
-
-            <img
-              className="absolute top-[-5px] left-[calc(50.00%_-_72px)] w-[65px] h-[65px] object-cover"
-              alt="Email"
-              src="/email.png"
-            />
-          </div>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-items">
+            <a href="#about" class="nav-item">About</a>
+            <a href="#work" class="nav-item">Work</a>
+            <a href="#projects" class="nav-item">Projects</a>
         </div>
+    </nav>
 
-        {/* Profile Photo */}
-        <div className="absolute top-[calc(50.00%_-_204px)] right-[320px] w-[193px] h-[193px] flex bg-white rounded-[96.5px] shadow-[5px_5px_15px_#00000040]">
-          <img
-            className="mt-[21px] w-[151.02px] h-[151.02px] ml-[21px] object-cover"
-            alt="Zz"
-            src="/zz-1.png"
-          />
-        </div>
-
-        {/* Skills Section */}
-        <div className="absolute top-[486px] left-[11%] w-[448px] h-[277px]">
-          {skills.map((skill, index) => (
-            <Badge
-              key={index}
-              variant="outline"
-              className={`inline-flex items-center justify-center gap-2.5 p-2.5 absolute ${skill.className} rounded-[30px] border-2 border-solid border-black shadow-[5px_5px_4px_#00000040] bg-white hover:bg-gray-50 cursor-pointer`}
-            >
-              <span className="relative w-fit mt-[-1.00px] [font-family:'Itim',Helvetica] font-normal text-black text-xl tracking-[0] leading-[normal] whitespace-nowrap">
-                {skill.text}
-              </span>
-            </Badge>
-          ))}
-
-          <h2 className="inline-flex items-center justify-center gap-2.5 p-2.5 absolute top-0 left-0">
-            <span className="relative w-fit mt-[-1.00px] [font-family:'Itim',Helvetica] font-normal text-black text-[50px] tracking-[0] leading-[normal] whitespace-nowrap">
-              Skills
-            </span>
-          </h2>
-        </div>
-
-        {/* About Me Section */}
-        <div className="absolute top-[175px] left-[11%] w-[644px] h-[230px] flex flex-col gap-3">
-          <h2 className="inline-flex w-[225px] h-20 relative items-center justify-center gap-2.5 p-2.5">
-            <span className="relative w-fit mt-[-1.00px] [font-family:'Itim',Helvetica] font-normal text-black text-[50px] tracking-[0] leading-[normal] whitespace-nowrap">
-              About Me
-            </span>
-          </h2>
-
-          <div className="inline-flex w-[644px] h-[138px] relative items-center justify-center gap-2.5 p-2.5">
-            <p className="relative w-[624px] h-[118px] mt-[-1.00px] [font-family:'Itim',Helvetica] font-normal text-black text-2xl tracking-[0] leading-[normal]">
-              Highly organized and detail-oriented professional with experience
-              in administrative support, product management, and creative
-              design.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Navigation */}
-      <nav className="flex z-[4] flex-col w-full max-w-[1440px] h-[52px] items-center justify-center px-16 py-0 fixed top-0 left-1/2 transform -translate-x-1/2 bg-white">
-        <div className="flex items-center justify-center gap-8 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="flex flex-col items-center justify-center relative flex-1 grow">
-            <div className="inline-flex items-center gap-8 relative flex-[0_0_auto]">
-              {navigationItems.map((item, index) => (
-                <Button
-                  key={index}
-                  variant="ghost"
-                  className="inline-flex items-center justify-center gap-1 relative flex-[0_0_auto] h-auto p-0 hover:bg-gray-100"
-                >
-                  <span className="relative w-fit mt-[-1.00px] [font-family:'Itim',Helvetica] font-normal text-black text-base tracking-[0] leading-6 whitespace-nowrap">
-                    {item.text}
-                  </span>
-                </Button>
-              ))}
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <!-- Profile Info -->
+        <div class="profile-info">
+            <h1 class="profile-name">Zita Ye</h1>
+            <div class="social-links">
+                <img src="/email.png" alt="Email" onclick="window.location.href='mailto:your-email@example.com'">
+                <img src="/linkedin.png" alt="LinkedIn" onclick="window.open('https://linkedin.com/in/yourprofile', '_blank')">
             </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Work Experience Section */}
-      <section className="z-[2] w-full max-w-[1440px] h-[1024px] relative bg-[#e1edf1]">
-        <div className="absolute top-[54px] left-[8.4%] w-[83.2%] h-[878px] flex gap-[74px] justify-center">
-          {workExperience.map((job, index) => (
-            <Card
-              key={index}
-              className={`${job.className} flex bg-white rounded-[35px] shadow-lg hover:shadow-xl transition-shadow cursor-pointer`}
-            >
-              <CardContent className="flex mt-4 w-[317px] h-[235px] ml-4 relative flex-col items-center gap-[22px] p-0">
-                <div className="inline-flex flex-col items-center gap-[22px] relative flex-[0_0_auto] mb-[-308.00px] ml-[-3.00px] mr-[-3.00px]">
-                  <div className="flex flex-col w-[323px] h-[226px] items-center justify-center gap-[30px] relative">
-                    <img
-                      className="relative w-[110px] h-[108px] object-cover"
-                      alt={job.title}
-                      src={job.logo}
-                    />
-
-                    <div className="flex flex-col w-[310px] items-center relative flex-[0_0_auto]">
-                      <h3 className="relative self-stretch h-11 mt-[-1.00px] [font-family:'Itim',Helvetica] font-normal text-black text-[32px] text-center tracking-[0] leading-[normal]">
-                        {job.title}
-                      </h3>
-
-                      <p className="relative self-stretch [font-family:'Itim',Helvetica] font-normal text-black text-2xl text-center tracking-[0] leading-[normal]">
-                        {job.period}
-                      </p>
-                    </div>
-                  </div>
-
-                  <p className="relative w-[259px] h-[295px] [font-family:'Itim',Helvetica] font-normal text-black text-base text-center tracking-[0] leading-[normal]">
-                    {job.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
         </div>
 
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            className="absolute top-[129px] left-[29.7%] w-[233px] h-[216px]"
-            alt="Vector"
-            src="/vector-2.svg"
-          />
-
-          <img
-            className="absolute top-[653px] right-[39%] w-[351px] h-[267px]"
-            alt="Vector"
-            src="/vector-1.svg"
-          />
-
-          <img
-            className="absolute top-[467px] left-[8.4%] w-[518px] h-[465px] object-cover"
-            alt="Card"
-            src="/card-1.png"
-          />
+        <!-- Profile Photo -->
+        <div class="profile-photo">
+            <img src="/zz-1.png" alt="Zita Ye">
         </div>
-      </section>
 
-      {/* Projects Section */}
-      <section className="z-[1] w-full max-w-[1440px] h-[2048px] relative bg-[#e1edf1]">
-        <img
-          className="absolute top-[243px] left-0 w-full h-[1486px] object-cover"
-          alt="Projects"
-          src="/projects.png"
-        />
-
-       
-
-        <Card className="flex flex-col w-[550px] h-[390px] items-center justify-center gap-2.5 p-2.5 absolute top-[1492px] left-[17%] bg-white rounded-[35px] overflow-hidden shadow-[5px_5px_10px_#00000040] hover:shadow-xl transition-shadow cursor-pointer">
-          <CardContent className="p-0 w-full h-full">
-            <img
-              className="relative self-stretch w-full h-[376.89px] mt-[-3.44px] mb-[-3.44px] object-cover"
-              alt="Photography"
-              src="/photography-1.png"
-            />
-          </CardContent>
-        </Card>
-
-        <Card className="flex flex-col w-[550px] h-[390px] items-center justify-center gap-2.5 p-2.5 absolute top-[1063px] right-[17%] bg-white rounded-[35px] overflow-hidden shadow-[5px_5px_10px_#00000040] hover:shadow-xl transition-shadow cursor-pointer">
-          <CardContent className="p-0 w-full h-full">
-            <img
-              className="relative self-stretch w-full h-[390px] mt-[-10.00px] mb-[-10.00px] object-cover"
-              alt="Web"
-              src="/web-1.png"
-            />
-          </CardContent>
-        </Card>
-
-        <Card className="flex w-[550px] h-[390px] items-center gap-[49px] absolute top-[635px] left-[17%] bg-[#ffffff80] rounded-[35px] overflow-hidden shadow-[5px_5px_10px_#00000040] hover:shadow-xl transition-shadow cursor-pointer">
-          <CardContent className="p-0 w-full h-full">
-            <img
-              className="relative w-[550px] h-[390px] rounded-[35px] object-cover"
-              alt="Posters"
-              src="/posters-1.png"
-            />
-          </CardContent>
-        </Card>
-
-        <Card className="inline-flex items-center gap-[49px] absolute top-[168px] left-[17%] w-[68.7%] h-[382px] bg-[#ffffff80] rounded-[35px] shadow-[5px_5px_10px_#00000040] hover:shadow-xl transition-shadow cursor-pointer">
-          <CardContent className="p-4 flex items-center gap-6 w-full h-full">
-            <p className="flex-1 [font-family:'Itim',Helvetica] font-normal text-black text-xl tracking-[0] leading-[normal] text-center">
-              In 2016, I participated as a competitor in Blizzard&apos;s
-              Hearthstone tournament and was invited to commentate the online
-              finals.
-              <br />
-              Possesses live streaming experience on platforms such as Douyu and
-              Toktok.
-              <br />
-              In 2024, successfully participated as an artist in New
-              Zealand&apos;s anime convention Overload, documenting and
-              promoting the entire process through recordings and live
-              streaming.
+        <!-- About Me Section -->
+        <div class="about-section">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                Highly organized and detail-oriented professional with experience in administrative support, product management, and creative design.
             </p>
+        </div>
 
-            <img
-              className="w-[433px] h-[382px] object-cover rounded-lg flex-shrink-0"
-              alt="Act"
-              src="/act-1.png"
-            />
-          </CardContent>
-        </Card>
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skill-badge skill-1">Graphic Design</div>
+            <div class="skill-badge skill-2">Animation</div>
+            <div class="skill-badge skill-3">UI Design</div>
+            <div class="skill-badge skill-4">Digital Marketing</div>
+            <div class="skill-badge skill-5">Photography&Editing</div>
+            <div class="skill-badge skill-6">Product Management</div>
+            <div class="skill-badge skill-7">Video Editing</div>
+        </div>
+    </section>
 
-        <img
-          className="absolute top-[1626px] right-[10%] w-[355px] h-[276px] object-cover"
-          alt="Cat"
-          src="/cat-1.png"
-        />
-      </section>
-    </div>
-  );
-};
+    <!-- Work Experience Section -->
+    <section class="work-section" id="work">
+        <div class="work-cards">
+            <div class="work-card">
+                <div class="work-card-content">
+                    <img src="/pb1.png" alt="Service Administrator" class="work-logo">
+                    <div>
+                        <h3 class="work-title">Service Administrator</h3>
+                        <p class="work-period">2022-present</p>
+                    </div>
+                    <p class="work-description">
+                        Developed pricing strategies and managed inventory for Apple and Samsung parts. Oversaw supplier relations and financial tracking, optimizing operations through effective stock coordination. Analyzed financial reports to boost performance. Designed marketing materials for New Zealand branches, directed event photography, and coordinated with insurance companies on invoicing and claims.
+                    </p>
+                </div>
+            </div>
 
-      
-    </div>
-  
-  </body>
+            <div class="work-card">
+                <div class="work-card-content">
+                    <img src="/nannanxi1-1.png" alt="Art & Design Teacher" class="work-logo">
+                    <div>
+                        <h3 class="work-title">Art & Design Teacher</h3>
+                        <p class="work-period">2019 - 2022</p>
+                    </div>
+                    <p class="work-description">
+                        Developed and delivered customized art education programs for diverse age groups, facilitating instruction in creative thinking, composition, and design principles. Offered specialized instruction for children with special needs and conducted live online streaming classes for students.
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <div class="work-card-content">
+                    <img src="/1on11-1.png" alt="Graphic Designer" class="work-logo">
+                    <div>
+                        <h3 class="work-title">Graphic Designer</h3>
+                        <p class="work-period">2018 - 2019</p>
+                    </div>
+                    <p class="work-description">
+                        Crafted publicity posters, digital assets, and marketing visuals for various campaigns. Spearheaded online promotions and compiled marketing reports to evaluate campaign effectiveness. Worked closely with manufacturers and activity providers to implement brand events and promotional strategies.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative elements -->
+        <img src="/vector-2.svg" alt="Vector" class="vector-1">
+        <img src="/vector-1.svg" alt="Vector" class="vector-2">
+        <img src="/card-1.png" alt="Card" class="card-decoration">
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <img src="/projects.png" alt="Projects" class="projects-bg">
+
+        <!-- Project 1 - Gaming/Streaming -->
+        <div class="project-card project-1">
+            <p class="project-1-text">
+                In 2016, I participated as a competitor in Blizzard's Hearthstone tournament and was invited to commentate the online finals.<br>
+                Possesses live streaming experience on platforms such as Douyu and Toktok.<br>
+                In 2024, successfully participated as an artist in New Zealand's anime convention Overload, documenting and promoting the entire process through recordings and live streaming.
+            </p>
+            <img src="/act-1.png" alt="Gaming and Streaming" class="project-1-image">
+        </div>
+
+        <!-- Project 2 - Posters -->
+        <div class="project-card project-2">
+            <img src="/posters-1.png" alt="Poster Designs">
+        </div>
+
+        <!-- Project 3 - Web Design -->
+        <div class="project-card project-3">
+            <img src="/web-1.png" alt="Web Design">
+        </div>
+
+        <!-- Project 4 - Photography -->
+        <div class="project-card project-4">
+            <img src="/photography-1.png" alt="Photography">
+        </div>
+
+        <!-- Cat decoration -->
+        <img src="/cat-1.png" alt="Cat" class="cat-decoration">
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.backgroundColor = 'white';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add click effects to skill badges
+        document.querySelectorAll('.skill-badge').forEach(badge => {
+            badge.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+    </script>
+</body>
 </html>
