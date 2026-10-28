@@ -136,3 +136,28 @@ dialog{background:#fbf7ed;border:1px solid #ac9f84;box-shadow:4px 8px 0 #7463444
 @media(max-width:760px){.cv-page{padding:48px 23px 115px 17px}.cv-layout{gap:42px;align-items:start}.cv-identity h2{font-size:64px}.cv-identity>p{font-size:14px}.cv-contacts a{font-size:16px}.cv-sticker{font-size:33px}.cv-panel h4{font-size:25px}.cv-panel article>p:not(.cv-date):not(.cv-company){font-size:18px}.cv-date,.cv-company{font-size:15px}.cv-skills li{font-size:19px}.cv-software li{font-size:12px}.cv-connect p{font-size:30px}.cv-connect a{font-size:24px}}
 .cv-experience{padding-top:54px}
 @media(max-width:760px){.cv-experience{padding-top:45px}}
+/* About as loose notes: folded name, washi tape and torn notebook paper. */
+.cv-page{align-items:flex-start;padding-top:70px}
+.cv-layout{align-items:start}
+.cv-identity{padding-top:0;margin-bottom:7px}
+.cv-identity h2{line-height:1.1;margin:0 0 22px;font-size:inherit;letter-spacing:-3px;overflow:visible;position:relative;transform:rotate(-3deg);transform-origin:left center}
+#about-name{display:inline-block;max-width:100%;font-family:var(--hand)}
+#about-name .fold-text{white-space:nowrap;line-height:1.1;letter-spacing:-.055em}
+.cv-identity>p{margin-bottom:18px}
+.cv-left{gap:48px}
+.cv-panel{border:0;border-radius:0;position:relative;isolation:isolate;box-shadow:3px 8px 12px #68533913;padding-top:58px}
+.cv-panel:before{content:'';position:absolute;top:-10px;left:18px;width:64px;height:25px;background:repeating-linear-gradient(90deg,#d9bd8c75 0 3px,#edd5ad96 3px 5px);transform:rotate(-9deg);z-index:1;pointer-events:none}
+.cv-panel:after{content:'';position:absolute;bottom:-10px;left:0;right:0;height:12px;background:var(--note-paper,#faf6e8);clip-path:polygon(0 0,100% 0,100% 62%,97% 85%,94% 60%,91% 90%,87% 56%,83% 88%,79% 69%,75% 100%,71% 70%,67% 88%,63% 60%,59% 92%,55% 65%,51% 100%,47% 69%,43% 89%,39% 62%,35% 95%,31% 66%,27% 88%,23% 60%,19% 100%,15% 70%,11% 92%,7% 58%,3% 89%,0 65%);pointer-events:none;z-index:-1}
+.cv-education{--note-paper:#e9e1ed;background-color:var(--note-paper);transform:rotate(-1.2deg);padding-bottom:36px}
+.cv-experience{--note-paper:#faf6e8;background-color:var(--note-paper);background-image:repeating-linear-gradient(0deg,transparent 0 31px,#bcaf981f 31px 32px),url('img/watercolor-paper.svg');transform:rotate(.6deg)}
+.cv-skills{--note-paper:#eee3ab;background-color:var(--note-paper);transform:rotate(1.5deg)}
+.cv-skills:before{background:#bec9a88f;transform:rotate(5deg)}
+.cv-software{--note-paper:#dce5d3;background-color:var(--note-paper);transform:rotate(-1.5deg)}
+.cv-software:before{background:#c8b5d29c;left:auto;right:15px;transform:rotate(9deg)}
+.cv-sticker{z-index:2;border-radius:0;box-shadow:2px 3px 0 #66553612}
+.cv-right{gap:48px}
+.cv-connect{border-radius:2px;box-shadow:3px 6px 13px #68533917;transform:rotate(1.5deg);padding:26px 20px}
+.cv-connect:before{content:'';position:absolute;top:-11px;left:30px;width:55px;height:22px;background:#e9cf94ab;transform:rotate(-5deg);pointer-events:none}
+@media(min-width:1201px){.cv-experience,.cv-right{margin-top:18px}}
+@media(max-width:1200px) and (min-width:761px){.cv-page{padding-top:60px}.cv-right{row-gap:45px}#about-name .fold-text{font-size:clamp(78px,8vw,108px)}}
+@media(max-width:760px){.cv-page{padding-top:38px}.cv-left{gap:46px}.cv-right{gap:48px}.cv-identity h2{margin-bottom:18px}#about-name .fold-text{font-size:clamp(78px,24vw,110px)}.cv-panel{padding-top:50px}.cv-experience{padding-top:52px}.cv-education{transform:rotate(-.5deg)}.cv-skills{transform:rotate(.5deg)}.cv-software{transform:rotate(-.5deg)}.cv-sticker{font-size:32px}.cv-panel:after{height:11px;bottom:-9px}}
