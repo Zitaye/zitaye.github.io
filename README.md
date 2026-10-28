@@ -25,11 +25,11 @@ Run `npm run dev` in another terminal to watch React/Tailwind source changes and
 - Preserved the supplied body's two velocity-based `animate` calls and parameters for ordinary motion. They animate numeric values without binding their output to card position in the supplied implementation; Motion's normal drag handles actual card inertia.
 - Removed the informal physics comment; no behavioural effect.
 
-The supplied light/dark utility variants remain available by applying `.dark` to a parent. The portfolio itself keeps the requested light-blue/lavender theme.
+The supplied light/dark utility variants remain available by applying `.dark` to a parent. The portfolio itself uses the current scrapbook paper theme.
 
-## Watercolour canvas and OptionWheel navigation
+## Scrapbook collage and OptionWheel navigation
 
-The site uses a pale-blue watercolour wash (`img/watercolor-wash.webp`) and fine cotton-paper grain (`img/watercolor-paper.svg`), soft paper cards, and a full-width content region beside the desktop navigation wheel. The previous header/footer have been removed. On phones the wheel opens from the floating Explore control; use View [page] or Escape to close it.
+The site uses warm graph paper with fine paper grain (`img/watercolor-paper.svg`), torn notebook sheets, magazine-cutout lettering and washi-taped photo cards, and a full-width content region beside the desktop navigation wheel. The previous header/footer have been removed. On phones the wheel opens from the floating Explore control; use View [page] or Escape to close it.
 
 `src/components/OptionWheel.jsx` and its CSS adapt the supplied source: the demo options become Home/About/Gallery/Contact; muted pigment colours, type, inset and curve are configured by `PortfolioNavigation.tsx`. The source's click, wheel, pointer drag, frame-independent smoothing and keyboard interactions remain. Added a controlled `value` for hash/history synchronisation, active-descendant accessibility, a primary-button drag guard and lost-pointer-capture cleanup. Reduced-motion users select without eased travel. Navigation has no sound configured. The source remains JavaScript, included through TypeScript's `allowJs`; the typed wrapper and the rest of the React code are TypeScript.
 
