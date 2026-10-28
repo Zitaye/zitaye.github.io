@@ -28,7 +28,6 @@ lightbox.addEventListener('click', event => {
   if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) lightbox.close();
 });
 lightbox.addEventListener('close', () => { document.body.style.overflow = ''; });
-const navLinks = document.querySelectorAll('nav a');
 const pages = [...document.querySelectorAll('main > section[id]')];
 const pageNames = { home: 'Home', about: 'About', gallery: 'Gallery', contact: 'Contact' };
 
@@ -40,10 +39,8 @@ function showPage({ focus = false } = {}) {
   const activePage = pages.find(page => page.id === pageId);
   if (lightbox.open) lightbox.close();
   pages.forEach(page => { page.hidden = page !== activePage; });
-  navLinks.forEach(link => {
-    if (link.hash === `#${pageId}`) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
-  });
+  document.body.dataset.page = pageId;
+  window.dispatchEvent(new CustomEvent('portfolio:routechange', { detail: pageId }));
   document.title = `${pageNames[pageId]} — Zita Ye | Art, Design & Photography`;
   if (focus) {
     activePage.setAttribute('tabindex', '-1');
@@ -64,4 +61,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 window.addEventListener('popstate', () => showPage({ focus: true }));
 window.addEventListener('hashchange', () => showPage({ focus: true }));
 showPage();
-document.querySelector('#year').textContent = new Date().getFullYear();
+window.addEventListener('portfolio:navigate', event => {
+  const pageId = event.detail;
+  if (!Object.hasOwn(pageNames, pageId)) return;
+  if (location.hash !== `#${pageId}`) history.pushState(null, '', `#${pageId}`);
+  showPage();
+});
