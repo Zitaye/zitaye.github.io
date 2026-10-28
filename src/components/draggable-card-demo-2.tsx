@@ -8,7 +8,6 @@ export default function DraggableCardDemo() {
     { title: 'Design for the everyday', image: 'img/posters-1.png', className: 'absolute rotate-[11deg]', background: 'bg-white' },
     { title: 'Through my lens', image: 'img/photography-1.png', className: 'absolute rotate-[-8deg]', background: 'bg-white' },
     { title: 'Ideas into interfaces', image: 'img/web-1.png', className: 'absolute rotate-[17deg]', background: 'bg-white' },
-    { title: 'Playful by nature', image: 'img/cat-1.png', className: 'absolute rotate-[-19deg]', background: 'bg-[#e8e2f2]' },
     { title: 'Art & community', image: 'img/act-1.png', className: 'absolute rotate-[7deg]', background: 'bg-[#dfebf3]' },
     { title: 'Small things, big feelings', image: 'img/zz-1.png', className: 'absolute rotate-[-3deg]', background: 'bg-[#e0e1ef]' },
   ];
