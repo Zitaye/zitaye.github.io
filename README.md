@@ -29,7 +29,7 @@ The supplied light/dark utility variants remain available by applying `.dark` to
 
 ## Oil-painting canvas and OptionWheel navigation
 
-The site uses a full-bleed generated oil landscape (`img/oil-landscape.webp`), canvas-paper cards, and a full-width content region beside the desktop navigation wheel. The previous header/footer have been removed. On phones the wheel opens from the floating Explore control; use View [page] or Escape to close it.
+The site uses a solid powder-blue background with subtle canvas weave and monochrome oil-pigment relief (`img/canvas-texture.svg`), canvas-paper cards, and a full-width content region beside the desktop navigation wheel. The previous header/footer have been removed. On phones the wheel opens from the floating Explore control; use View [page] or Escape to close it.
 
 `src/components/OptionWheel.jsx` and its CSS adapt the supplied source: the demo options become Home/About/Gallery/Contact; muted pigment colours, type, inset and curve are configured by `PortfolioNavigation.tsx`. The source's click, wheel, pointer drag, frame-independent smoothing and keyboard interactions remain. Added a controlled `value` for hash/history synchronisation, active-descendant accessibility, a primary-button drag guard and lost-pointer-capture cleanup. Reduced-motion users select without eased travel. Navigation has no sound configured. The source remains JavaScript, included through TypeScript's `allowJs`; the typed wrapper and the rest of the React code are TypeScript.
 
