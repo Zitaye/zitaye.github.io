@@ -14,8 +14,11 @@ export default function DraggableCardDemo() {
   ];
   return <>
     <DraggableCardContainer key={version} className="relative flex min-h-0 h-[450px] md:h-[660px] w-full items-center justify-center overflow-clip">
-      <p className="pointer-events-none absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">A curious eye.<br />A playful mind.</p>
-      {items.map(item => <DraggableCardBody key={item.title} className={`${item.className} min-h-60 w-44 p-3 md:min-h-96 md:w-80 md:p-6`}>
+      <div className="home-intro">
+        <h1 id="hero-title">Zita <em>Ye.</em></h1>
+        <p className="profession">Visual Artist <span>·</span> Designer <span>·</span> Photographer</p>
+      </div>
+      {items.map(item => <DraggableCardBody key={item.title} className={`artwork-card artwork-card-${items.indexOf(item)} ${item.className} min-h-60 w-44 p-3 md:min-h-96 md:w-80 md:p-6`}>
         <img src={item.image} alt={item.title} draggable={false} className={`pointer-events-none relative z-10 h-40 w-full object-contain md:h-80 md:w-80 ${item.background}`} />
         <h3 className="mt-4 text-center text-sm font-bold text-neutral-700 md:text-2xl dark:text-neutral-300">{item.title}</h3>
       </DraggableCardBody>)}
