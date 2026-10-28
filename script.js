@@ -29,13 +29,39 @@ lightbox.addEventListener('click', event => {
 });
 lightbox.addEventListener('close', () => { document.body.style.overflow = ''; });
 const navLinks = document.querySelectorAll('nav a');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) navLinks.forEach(link => {
-      if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'page');
-      else link.removeAttribute('aria-current');
-    });
+const pages = [...document.querySelectorAll('main > section[id]')];
+const pageNames = { home: 'Home', about: 'About', gallery: 'Gallery', contact: 'Contact' };
+
+function showPage({ focus = false } = {}) {
+  // Keep links from the previous portfolio version working.
+  const requested = location.hash.slice(1);
+  const route = requested === 'contacts' ? 'contact' : requested;
+  const pageId = Object.hasOwn(pageNames, route) ? route : 'home';
+  const activePage = pages.find(page => page.id === pageId);
+  if (lightbox.open) lightbox.close();
+  pages.forEach(page => { page.hidden = page !== activePage; });
+  navLinks.forEach(link => {
+    if (link.hash === `#${pageId}`) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
   });
-}, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
-document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
+  document.title = `${pageNames[pageId]} — Zita Ye | Art, Design & Photography`;
+  if (focus) {
+    activePage.setAttribute('tabindex', '-1');
+    activePage.focus({ preventScroll: true });
+  }
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  if (!Object.hasOwn(pageNames, link.hash.slice(1))) return;
+  link.addEventListener('click', event => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    showPage({ focus: true });
+  });
+});
+window.addEventListener('popstate', () => showPage({ focus: true }));
+window.addEventListener('hashchange', () => showPage({ focus: true }));
+showPage();
 document.querySelector('#year').textContent = new Date().getFullYear();
