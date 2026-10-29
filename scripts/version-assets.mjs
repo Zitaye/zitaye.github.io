@@ -3,7 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const root = new URL('../', import.meta.url);
 const indexUrl = new URL('index.html', root);
 let html = await readFile(indexUrl, 'utf8');
-for (const file of ['style.css', 'script.js', 'assets/home.css', 'assets/home.js']) {
+for (const file of ['style.css', 'magazine.css', 'script.js', 'assets/home.css', 'assets/home.js']) {
   const contents = await readFile(new URL(file, root));
   const version = createHash('sha256').update(contents).digest('hex').slice(0, 12);
   const escaped = file.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

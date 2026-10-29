@@ -36,3 +36,7 @@ The site uses warm graph paper with fine paper grain (`img/watercolor-paper.svg`
 Production builds also run `scripts/version-assets.mjs`. It adds content-derived version queries to the four stylesheet/script references in `index.html`, so each changed resource gets a fresh browser cache key after a Pages deployment.
 
 About uses the supplied `FoldText` React component (`src/components/FoldText.jsx` and CSS) with GSAP. `AboutName.tsx` mounts it on entry to About, so the paper-fold reveal replays when returning to the page rather than finishing while hidden. It uses character splitting, a top paper hinge, pointer refolding and the source's reduced-motion support. The name keeps the site's locally hosted Kalam handwriting and a responsive font size. Resume sections use coloured sticky-note paper, washi tape and CSS torn edges; content remains selectable HTML.
+
+## Japanese editorial journal theme
+
+`magazine.css` holds the current theme overrides: warm off-white paper, fine editorial rules, serif headings, monospaced captions, vermilion ink accents, muted torn-paper notes and numbered photo fragments. It is loaded after the base and component styles and receives a content-derived cache version during production builds. The cover collage, wheel navigation and About FoldText effects are preserved.

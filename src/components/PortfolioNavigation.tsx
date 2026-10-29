@@ -23,8 +23,8 @@ export default function PortfolioNavigation() {
   return <div className={`portfolio-navigation${open ? ' is-open' : ''}`}>
     <button className="navigation-toggle" type="button" aria-expanded={open} aria-controls="page-wheel" onClick={() => setOpen(v => !v)}>Explore <span>{labels[selected]}</span><span aria-hidden="true">{open ? '−' : '+'}</span></button>
     <div className="wheel-panel" id="page-wheel" inert={mobile && !open}>
-      <p className="navigation-caption">ZITA YE / PORTFOLIO</p>
-      <OptionWheel items={labels} value={selected} defaultSelected={selected} fontSize={mobile ? 1.9 : 2.8} spacing={1.5} inset={mobile ? 55 : 80} textColor="#9d917a" activeColor="#514a3b" tilt={9} curve={0.9} blur={0.45} fade={0.15} minOpacity={0.45} smoothing={200} onChange={(index: number) => {
+      <p className="navigation-caption">ZITA YE / VISUAL JOURNAL</p>
+      <OptionWheel items={labels} value={selected} defaultSelected={selected} fontSize={mobile ? 1.9 : 2.8} spacing={1.5} inset={mobile ? 55 : 80} textColor="#a4a097" activeColor="#a84032" tilt={9} curve={0.9} blur={0.45} fade={0.15} minOpacity={0.45} smoothing={200} onChange={(index: number) => {
         setSelected(index);
         if (currentIndex() !== index) window.dispatchEvent(new CustomEvent('portfolio:navigate', { detail: routes[index] }));
       }} />
