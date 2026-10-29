@@ -44,3 +44,7 @@ About uses the supplied `FoldText` React component (`src/components/FoldText.jsx
 ## Handmade scrapbook refresh
 
 The current `magazine.css` theme uses a generated physical collage-paper background (`img/journal-paper.webp`), washi-taped photo cards, pressed-plant decoration, sage gingham, handmade stickers and warm handwritten notes. The previous magazine rules/numbering were replaced; all interactive components and resume content are preserved. Direct access to Xiaohongshu was blocked by the environment network policy during this update, so this design is an original interpretation rather than a reproduction of a verified post.
+
+## Supplied journal-photo reference
+
+The latest refinement follows the user-supplied open-journal photo: a flat warm neutral background, sparse handwritten content, small cake/flower doodles, translucent torn gingham tape and pale sticky-note papers. The generated vintage floral/lace background and decorative seals are no longer displayed or requested.

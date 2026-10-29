@@ -1,8 +1,8 @@
 /* Handmade memory book: torn paper, lace, pressed flowers, washi and photos. */
-:root{--ink:#514838;--muted:#8c7d65;--purple:#a47e7d;--line:#a4957350;--paper:#f1eadb;--editorial:Kalam,'Segoe Print',cursive;--mono:'Courier New',monospace;--red:#8c6f5b}
+:root{--ink:#514838;--muted:#8c7d65;--purple:#a47e7d;--line:#a4957350;--paper:#eee4dc;--editorial:Kalam,'Segoe Print',cursive;--mono:'Courier New',monospace;--red:#8c6f5b}
 body{background:var(--paper);color:var(--ink);font-family:var(--hand)}
-body:before{background:#f1eadb url('img/journal-paper.webp') center/cover no-repeat}
-body:after{opacity:.12}
+body:before{background:var(--paper)}
+body:after{display:none}
 ::selection{background:#c6d1b2aa;color:#514838}
 a:focus-visible,button:focus-visible{outline-color:#8f9874}
 /* The index is a handwritten margin, rather than a magazine masthead. */
@@ -131,3 +131,85 @@ dialog{background:#fff9ed;border:1px solid #c3b597;box-shadow:6px 12px 35px #6f5
 }
 @media(min-width:761px){.wheel-panel{isolation:isolate}.wheel-panel:before{content:'';position:absolute;left:24px;right:22px;top:30%;height:43%;background:#fbf7e5c9;box-shadow:2px 5px 10px #77633e0e;transform:rotate(-2deg);z-index:-1;clip-path:polygon(1% 1%,98% 0,100% 98%,89% 99%,77% 98%,63% 100%,48% 98%,33% 99%,17% 98%,0 100%)}.navigation-hint{background:#faf5e2c9;padding:5px 8px}}
 .card-instructions p{background:#fbf5e3d9;padding:6px 10px;box-shadow:1px 3px 4px #77633e0a;color:#887353}
+
+/* Matched to the supplied open-journal reference: plain backdrop and airy details. */
+:root{--ink:#60574e;--muted:#9b8c7d;--purple:#b18786;--line:#b3a59655}
+body{background:var(--paper)}
+body:before{background:var(--paper);background-image:none}
+body:after{display:none}
+.navigation-caption{background:transparent;box-shadow:none;transform:rotate(-2deg);padding:0;font-size:19px}
+.navigation-caption:before{display:none}
+.wheel-panel:before{display:none}
+.navigation-hint{background:transparent;padding:0;color:#ac9c8b}
+.option-wheel__item--selected:after{background:#e0d2b56b;height:20%;bottom:2px}
+.card-home:before{width:75px;height:100px;top:10%;right:17%;left:auto;background:radial-gradient(circle,#fbf6ec 2px,transparent 3px) 0 0/18px 18px,#b8ccd5;opacity:.65;transform:rotate(4deg);box-shadow:none;clip-path:polygon(2% 2%,16% 0,31% 2%,50% 0,69% 2%,84% 0,98% 2%,100% 96%,84% 99%,69% 97%,52% 100%,32% 97%,15% 99%,0 97%)}
+.card-home:after{width:95px;height:115px;bottom:13%;left:25%;background:#e6d29e70;transform:rotate(-5deg);box-shadow:none}
+.name-cutout,.name-cutout:nth-child(2),.name-cutout:nth-child(3),.name-cutout:nth-child(4),.name-cutout:nth-child(5),.name-cutout:nth-child(6){background:transparent;color:#736355;box-shadow:none;transform:none;font-family:var(--hand);font-style:normal}
+#home-cards [role="group"]{background:#fffaf1;background-image:none;border:0;box-shadow:1px 3px 8px #8c756215,3px 7px 12px #8c75620d;padding:13px 13px 19px;width:clamp(205px,17vw,315px)}
+#home-cards [role="group"]>img{height:clamp(190px,17vw,300px);filter:saturate(.83)}
+#home-cards h3{font-size:18px;line-height:1.35;color:#8a7561}
+#home-cards [role="group"]:before,#home-cards [role="group"]:nth-of-type(2n):before,.cv-panel:before,.contact>.wrap:before,.work:before,.work:nth-child(even):before{border:0;box-shadow:none;clip-path:polygon(0 5%,9% 0,17% 8%,27% 1%,38% 7%,49% 0,62% 8%,73% 1%,87% 6%,98% 1%,100% 91%,91% 100%,81% 94%,69% 100%,56% 93%,43% 100%,31% 94%,18% 100%,9% 94%,1% 100%)}
+#home-cards [role="group"]:before{height:24px;width:36%;top:-8px;background:#dec99770}
+#home-cards [role="group"]:nth-of-type(2n):before{background:repeating-linear-gradient(0deg,#d2b2b755 0 4px,#f2dadd66 4px 8px),repeating-linear-gradient(90deg,#bc969b55 0 4px,#e8cacf55 4px 8px)}
+#home-cards [role="group"]:after{display:none}
+.journal-card-index{color:#b4a08b;font-size:9px;margin-top:9px}
+.card-instructions p{background:transparent;box-shadow:none;padding:0;color:#ae9b87}
+.card-instructions button{background:#faf2de87;border:1px dashed #c6b59a;font-size:11px;box-shadow:none}
+.journal-doodle{position:absolute;pointer-events:none;z-index:2}
+.doodle-cake{right:8%;bottom:14%;width:93px;height:auto;transform:rotate(7deg)}
+.doodle-flower{left:28%;top:7%;width:58px;height:82px;transform:rotate(-14deg)}
+.cv-identity>p{color:#a18d7d}
+.cv-contacts a{background:transparent;box-shadow:none;border:0;border-bottom:1px dashed #bca992;padding:4px 0;transform:none}
+.cv-panel{box-shadow:1px 4px 10px #8c75620c;background-image:none;transform:none}
+.cv-education{--note-paper:#f4ead9;background-color:var(--note-paper);transform:rotate(-.5deg)}
+.cv-experience{--note-paper:#fff8ed;background:var(--note-paper)}
+.cv-skills{--note-paper:#e7eadc;background-color:var(--note-paper);transform:rotate(.5deg)}
+.cv-software{--note-paper:#f0e3df;background-color:var(--note-paper);transform:rotate(-.4deg)}
+.cv-sticker,.cv-sticker.pink,.cv-sticker.yellow,.cv-sticker.blush{background:transparent;box-shadow:none;font-size:27px;color:#89735e;padding:6px 8px;top:-21px}
+.cv-panel h4{color:#7c6756}
+.cv-date{color:#b19b83;font-size:10px}
+.cv-panel article>p:not(.cv-date):not(.cv-company){color:#9b8773;font-size:17px}
+.cv-company{color:#b08d80}
+.cv-skills li{color:#8c7a65;font-size:17px}
+.cv-connect{background:#eadfc7;box-shadow:1px 3px 8px #8c75620b;transform:rotate(.6deg)}
+.cv-connect p{font-size:26px;color:#8f7d65}
+.cv-connect a{font-size:19px;background:#faf5e8;box-shadow:none;border:0;border-bottom:1px dashed #b69c80}
+.software-mark,.cv-software li:nth-child(2) .software-mark,.cv-software li:nth-child(3) .software-mark,.software-mark.office{background:#fffaf0;box-shadow:none;border-color:#c6bba4;color:#a98d70;border-radius:5px}
+.section-head h2{font-size:clamp(42px,4vw,63px)}
+.section-head>p{color:#b19a81;font-size:16px}
+.filters button{box-shadow:none;background:#fff8ec80;color:#aa9379}
+.filters .selected{background:#d7dfc39e;color:#8c9870}
+.work,.work:nth-child(even){transform:rotate(-.6deg)}.work:nth-child(even){transform:rotate(.6deg)}
+.work-image{border:11px solid #fffbf2;box-shadow:1px 4px 12px #8c756211}
+.work:before{background:#e1c99870;height:25px}
+.work:nth-child(even):before{background:#c0cdb170}
+.work-caption,.view{background:#fffbf2}
+.work-caption h3{color:#8f785f;font-size:23px}.work-caption p{font-size:10px;color:#b19b81}
+.contact>.wrap{background:#fff8ea;box-shadow:3px 6px 0 #e4d9c325;transform:rotate(-.4deg);border:0}
+.contact>.wrap:before{background:#c8d3b16b;height:25px;width:90px}
+.contact h2{font-size:clamp(55px,6vw,90px);color:#8c755f}
+.contact>div>p:not(.eyebrow){color:#ae947a;font-size:18px}
+.button{background:#e1e5d18c;color:#8f9b77;border-color:#bdc5a5;box-shadow:none}
+@media(max-width:1100px) and (min-width:761px){#home-cards [role="group"]{width:200px;padding:12px 12px 18px}#home-cards [role="group"]>img{height:190px}}
+@media(max-width:760px){
+  .card-home:before{top:9%;right:15%;width:44px;height:63px}
+  .card-home:after{left:7%;bottom:18%;width:60px;height:85px}
+  #home-cards [role="group"]{width:155px;padding:10px 10px 15px}
+  #home-cards [role="group"]>img{height:135px}
+  #home-cards h3{font-size:15px}.journal-card-index{font-size:8px;margin-top:7px}
+  #home-cards [role="group"]:before{height:20px;top:-7px}
+  .doodle-cake{right:7%;bottom:20%;width:64px}
+  .doodle-flower{left:11%;top:7%;width:40px;height:60px}
+  .card-instructions p{font-size:11px;max-width:185px}.card-instructions p span{max-width:180px;font-size:7px}
+  .card-instructions button{font-size:10px;padding:7px 10px}
+  .navigation-toggle,.wheel-panel{background:#faf3e9f5;box-shadow:1px 3px 10px #8c756211;border-color:#c5b59c5c}
+  .cv-sticker,.cv-sticker.pink,.cv-sticker.yellow,.cv-sticker.blush{font-size:29px}
+  .cv-panel article>p:not(.cv-date):not(.cv-company){font-size:18px}.cv-skills li{font-size:18px}.cv-date{font-size:11px}
+  .section-head h2{font-size:42px}.contact h2{font-size:56px}
+}
+.cv-panel article>p:not(.cv-date):not(.cv-company),.cv-skills li{color:#7e6b59}
+.cv-company{color:#947260}
+.cv-date,.work-caption p{color:#8b765f}
+#home-cards h3,.work-caption h3{color:#816b58}
+.cv-identity>p,.section-head>p,.contact>div>p:not(.eyebrow){color:#8d7762}
+.card-instructions p{color:#8e7965}
