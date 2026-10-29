@@ -40,3 +40,7 @@ About uses the supplied `FoldText` React component (`src/components/FoldText.jsx
 ## Japanese editorial journal theme
 
 `magazine.css` holds the current theme overrides: warm off-white paper, fine editorial rules, serif headings, monospaced captions, vermilion ink accents, muted torn-paper notes and numbered photo fragments. It is loaded after the base and component styles and receives a content-derived cache version during production builds. The cover collage, wheel navigation and About FoldText effects are preserved.
+
+## Handmade scrapbook refresh
+
+The current `magazine.css` theme uses a generated physical collage-paper background (`img/journal-paper.webp`), washi-taped photo cards, pressed-plant decoration, sage gingham, handmade stickers and warm handwritten notes. The previous magazine rules/numbering were replaced; all interactive components and resume content are preserved. Direct access to Xiaohongshu was blocked by the environment network policy during this update, so this design is an original interpretation rather than a reproduction of a verified post.

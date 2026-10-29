@@ -1,131 +1,133 @@
-/* A quiet Japanese editorial journal: typography, paper, red ink, found fragments. */
-:root{--ink:#292925;--muted:#7b786f;--purple:#a84032;--line:#33332d38;--serif:'Times New Roman',Georgia,serif;--editorial:Georgia,'Times New Roman',serif;--mono:'Courier New',monospace;--paper:#f4f1e9;--red:#a84032}
-body{background:var(--paper);font-family:var(--editorial);color:var(--ink)}
-body:before{background:var(--paper);background-image:linear-gradient(90deg,transparent calc(100% - 1px),#7b75610b 1px);background-size:120px 100%}
-body:after{opacity:.16}
-::selection{background:#b7534130;color:#292925}
-a:focus-visible,button:focus-visible{outline-color:var(--red)}
-/* The wheel reads like a magazine index, with handwritten margin notes. */
-.navigation-caption{font:9px/1.5 var(--mono);letter-spacing:1.5px;background:transparent;box-shadow:none;transform:none;border-top:1px solid #292925;padding:11px 0;width:calc(100% - 80px)}
-.wheel-panel .option-wheel{font-family:var(--editorial)}
-.option-wheel__item{font-weight:400;letter-spacing:-1.5px}
-.option-wheel__item--selected:after{height:1px;bottom:-9px;background:var(--red);transform:none;right:0;left:0}
-.navigation-hint{font:11px/1.7 var(--hand);color:#77766c}
-.navigation-hint>span{font:9px/1.7 var(--mono)}
-/* Full-bleed cover, with the existing draggable collage above the title. */
-.card-home:before{background:#e2dfd5;top:13%;right:10%;width:30%;height:29%;transform:rotate(4deg);opacity:.65}
-.card-home:after{background:repeating-linear-gradient(0deg,#faf8f0 0 20px,#aaa49430 20px 21px);width:29%;left:22%;bottom:13%;height:29%;transform:rotate(-8deg)}
-.journal-edition{position:absolute;top:38px;left:calc(var(--rail) + 48px);right:48px;display:flex;justify-content:space-between;gap:15px;border-top:1px solid #292925;padding-top:10px;font:9px/1.5 var(--mono);letter-spacing:1.2px;z-index:2;pointer-events:none}
-.journal-margin{position:absolute;right:21px;top:25%;writing-mode:vertical-rl;font:9px/1.5 var(--mono);letter-spacing:2px;z-index:2;pointer-events:none;color:#888478}
-.home-intro h1{font-family:var(--editorial);font-weight:400;font-size:clamp(125px,18vw,300px);letter-spacing:-9px}
-.name-cutout{background:#fbf8ee;color:#2c2b25;box-shadow:1px 3px 0 #5f5a4614;transform:rotate(-4deg);font-family:var(--editorial);font-weight:400;padding:0 .01em}
-.name-cutout:nth-child(2){background:#e8e2d5;color:#292925;transform:rotate(2deg);font-family:var(--editorial)}
-.name-cutout:nth-child(3){background:#e2e2d4;transform:rotate(-2deg)}
-.name-cutout:nth-child(4){background:#ede6d9;transform:rotate(3deg)}
-.name-cutout:nth-child(5){background:#e8d9d0;color:var(--red);transform:rotate(-4deg)}
-.name-cutout:nth-child(6){background:#f9f6ed;color:var(--red);transform:rotate(2deg);font-family:var(--editorial)}
-#home-cards [role="group"]{background-color:#faf8f1;border:1px solid #fff9;padding:18px 18px 23px;box-shadow:2px 5px 2px #4d493c0b,6px 14px 25px #4d493c1c}
-#home-cards [role="group"]:before{background:#d6c7a760;width:29%;left:39%;height:20px;top:-8px;box-shadow:none}
-#home-cards [role="group"]:nth-of-type(2n):before{background:#bab9aa66}
-#home-cards [role="group"]:after{font:8px var(--mono);color:#989486}
-#home-cards [role="group"]>img{filter:saturate(.8);height:clamp(215px,20vw,350px)}
-.journal-card-index{display:block;font:8px/1.4 var(--mono);letter-spacing:1px;color:#8e8576;padding-top:13px}
-#home-cards h3{font:normal 22px/1.25 var(--editorial);color:#35332c;margin-top:6px;letter-spacing:-.4px;text-align:left}
-.card-instructions p{font:italic 13px/1.6 var(--editorial);color:#767266}
-.card-instructions p span{font:8px/1.7 var(--mono);letter-spacing:.4px}
-.card-instructions button{background:transparent;color:var(--red);border:0;border-bottom:1px solid var(--red);box-shadow:none;transform:none;border-radius:0;padding:7px 0;font:10px var(--mono)}
-/* Editorial spreads with ragged edges and small paper labels. */
-h2{font-family:var(--editorial);font-weight:400;letter-spacing:-2px;line-height:1.12}
-.eyebrow{font:10px/1.6 var(--mono);letter-spacing:1.8px;color:var(--red)}
-.cv-page{padding-top:65px}
-.cv-layout{gap:32px}
-.cv-identity h2{font-family:var(--editorial);transform:rotate(-1deg)}
-#about-name{font-family:var(--editorial)}
-.cv-identity>p{font:10px/1.8 var(--mono);letter-spacing:.4px;color:#787368}
-.cv-contacts a{background:transparent;transform:none;border:0;border-bottom:1px solid #a59d8c;border-radius:0;padding:5px 0;font:13px/1.7 var(--editorial)}
-.cv-contacts a>span{background:transparent;border:1px solid #b9afa0;width:18px;height:18px;font:11px Arial,sans-serif}
-.cv-panel{background-color:#faf8f1;box-shadow:2px 5px 0 #c8bda515,4px 10px 25px #66563a0a;--note-paper:#faf8f1;padding:50px 24px 26px}
-.cv-panel:before{background:#d5c7a866;width:53px;height:19px;top:-7px;left:15px;transform:rotate(-7deg)}
-.cv-education{--note-paper:#e6e4d7;background-color:var(--note-paper);transform:rotate(-1deg)}
-.cv-experience{--note-paper:#faf8f1;background-color:var(--note-paper);background-image:url('img/watercolor-paper.svg');transform:rotate(.3deg)}
-.cv-skills{--note-paper:#ece5d7;background-color:var(--note-paper);transform:rotate(.8deg)}
-.cv-skills:before{background:#b4b8a466}
-.cv-software{--note-paper:#e2e3d7;background-color:var(--note-paper);transform:rotate(-.8deg)}
-.cv-software:before{background:#cbb9a466}
-.cv-sticker,.cv-sticker.pink,.cv-sticker.yellow,.cv-sticker.blush{font:normal 26px/1.1 var(--editorial);background:#fbf8ef;border:1px solid #b9b1a252;box-shadow:2px 3px 0 #5f5a4612;padding:8px 14px;color:#39372f;letter-spacing:-.8px;top:-20px}
-.cv-sticker:before{content:'— ';color:var(--red);font-size:17px}
-.cv-panel h4,.cv-education h4{font:normal 22px/1.35 var(--editorial);letter-spacing:-.4px}
-.cv-date{font:10px/1.8 var(--mono);color:#8a7862;letter-spacing:.2px}
-.cv-company{font:12px/1.7 var(--editorial);color:var(--red)}
-.cv-panel article>p:not(.cv-date):not(.cv-company){font:16px/1.65 var(--editorial);color:#70695d}
-.cv-panel article+article{margin-top:30px;padding-top:15px;border-top:1px solid #a59a832a}
-.cv-skills li{font:16px/1.5 var(--editorial);color:#554f45;margin-bottom:14px}
-.cv-skills li:before{content:'+';color:var(--red);font-weight:400;font-size:17px}
-.cv-languages{font:13px/1.8 var(--editorial)}
-.cv-languages strong{font:10px var(--mono);text-transform:uppercase;letter-spacing:1px}
-.cv-software li{font:12px/1.5 var(--editorial)}
-.software-mark,.cv-software li:nth-child(2) .software-mark,.cv-software li:nth-child(3) .software-mark,.software-mark.office{border:1px solid #857d6b;color:#736653;border-radius:2px;background:#f8f5ea;transform:rotate(-2deg);box-shadow:2px 3px 0 #5f5a4610}
-.cv-software li:nth-child(2) .software-mark{transform:rotate(2deg);color:var(--red)}
-.cv-connect{background:#e6d8cd;transform:rotate(.5deg);box-shadow:2px 5px 10px #66563a0b}
-.cv-connect p{font:normal 25px/1.15 var(--editorial)}
-.cv-connect a{font:italic 20px/1.2 var(--editorial);background:#f8f4e9;color:var(--red);border-bottom:1px solid #a8403260;transform:rotate(-5deg)}
-.cv-connect:before{background:#d3c2a566;height:18px}
-/* Gallery as numbered magazine plates. */
-.section-head{border-top:1px solid #302d28;padding-top:20px}
-.section-head>p{font:italic 15px/1.6 var(--editorial)}
-.filters button{background:transparent;border:0;border-bottom:1px solid #afa592;border-radius:0;font:10px var(--mono);letter-spacing:.5px;padding:9px 13px}
-.filters .selected{background:transparent;color:var(--red);border-bottom:2px solid var(--red)}
-.work,.work:nth-child(even){transform:rotate(-.6deg)}
-.work:nth-child(even){transform:rotate(.8deg)}
-.work:before{background:#d3c2a570;height:20px;top:-7px;width:22%;left:40%}
-.work-image{border-color:#faf8f1;box-shadow:2px 6px 18px #4d493c15}
-.work-caption,.view{background:#faf8f1}
-.work-caption{padding:16px 13px;border-top:1px solid #bcb29f40}
-.work-caption h3{font:normal 25px/1.2 var(--editorial);letter-spacing:-.6px}
-.work-caption p,.work-caption>span{font:9px/1.7 var(--mono);color:#84796a;letter-spacing:.7px}
-.work-caption>span{color:var(--red);font-size:12px}
-.view{font:9px var(--mono);color:var(--red)}
-/* A postcard tucked into the journal. */
-.contact>.wrap{background-color:#faf8f1;transform:rotate(-1deg);border-top:1px solid #272721;padding:60px 45px}
-.contact>.wrap:before{background:#cdbb9b70;width:80px;height:23px;left:auto;right:35px;transform:rotate(7deg)}
-.contact h2{font:normal clamp(60px,7vw,110px)/1.05 var(--editorial);letter-spacing:-4px}
-.contact>div>p:not(.eyebrow){font:17px/1.7 var(--editorial);color:#777063}
-.contact-star{color:var(--red);width:35px}
-.button{background:transparent;color:var(--red);border:0;border-bottom:1px solid var(--red);padding:12px 0;box-shadow:none;transform:none;font:11px var(--mono);letter-spacing:.3px}
-.button:hover{color:#574e3e;background:transparent}
-dialog{background:#faf8f1;box-shadow:3px 10px 40px #29292530}
-.dialog-head h2{font:normal 29px var(--editorial)}
-.close{font:10px var(--mono);border:0;border-bottom:1px solid #a59d8c;padding:7px 2px}
-@media(max-width:1100px) and (min-width:761px){.journal-edition{left:calc(var(--rail) + 28px);right:28px}.journal-margin{right:10px}.cv-panel{padding-left:22px;padding-right:22px}}
+/* Handmade memory book: torn paper, lace, pressed flowers, washi and photos. */
+:root{--ink:#514838;--muted:#8c7d65;--purple:#a47e7d;--line:#a4957350;--paper:#f1eadb;--editorial:Kalam,'Segoe Print',cursive;--mono:'Courier New',monospace;--red:#8c6f5b}
+body{background:var(--paper);color:var(--ink);font-family:var(--hand)}
+body:before{background:#f1eadb url('img/journal-paper.webp') center/cover no-repeat}
+body:after{opacity:.12}
+::selection{background:#c6d1b2aa;color:#514838}
+a:focus-visible,button:focus-visible{outline-color:#8f9874}
+/* The index is a handwritten margin, rather than a magazine masthead. */
+.navigation-caption{font:20px/1.5 var(--hand);letter-spacing:-.5px;background:#f9f5e9d9;transform:rotate(-4deg);padding:12px 15px;box-shadow:2px 4px 6px #6d5a3520;border:0;width:auto;max-width:calc(100% - 65px)}
+.navigation-caption:before{content:'';position:absolute;top:-9px;left:35%;width:52px;height:21px;transform:rotate(9deg);background:#d3c09b70}
+.wheel-panel .option-wheel{font-family:var(--hand)}
+.option-wheel__item{letter-spacing:-1px}
+.option-wheel__item--selected:after{background:#d3d5b285;height:30%;bottom:3px;left:-5px;right:-8px;transform:rotate(-3deg);border-radius:40% 15% 30% 15%}
+.navigation-hint{font:13px/1.6 var(--hand);color:#9b8d73}
+.navigation-hint span{font:9px/1.8 var(--mono)}
+/* The loose scrapbook cover. */
+.card-home:before{background:#dce0c9;top:13%;right:9%;width:28%;height:28%;transform:rotate(8deg);opacity:.8}
+.card-home:after{background:repeating-linear-gradient(0deg,#fbf7e8 0 25px,#b4aa8d40 25px 26px);left:24%;bottom:12%;width:27%;height:28%;transform:rotate(-12deg);box-shadow:4px 8px 14px #76624215}
+.home-intro h1{font-family:var(--hand);font-weight:400;font-size:clamp(110px,16vw,280px);letter-spacing:-6px}
+.name-cutout,.name-cutout:nth-child(2),.name-cutout:nth-child(3),.name-cutout:nth-child(4),.name-cutout:nth-child(5),.name-cutout:nth-child(6){font-family:var(--hand);font-style:normal;font-weight:400;color:#62533f;background:#faf5e5;box-shadow:2px 4px 0 #6b583c15}
+.name-cutout:nth-child(2){background:#dfd6c4}.name-cutout:nth-child(3){background:#ead6b0}.name-cutout:nth-child(4){background:#d8dfc6}.name-cutout:nth-child(5){background:#e4cebf}.name-cutout:nth-child(6){background:#f4ebd7}
+#home-cards [role="group"]{background:#fcf9ee url('img/watercolor-paper.svg');border:1px solid #fff9;border-radius:1px;box-shadow:2px 4px 1px #6f5b3a12,5px 12px 22px #6f5b3a29;padding:20px 16px 25px}
+#home-cards [role="group"]:before{top:-11px;left:32%;height:29px;width:40%;background:repeating-linear-gradient(90deg,#d7c29799 0 2px,#e5d3b4a0 2px 5px);transform:rotate(-7deg);border-left:1px dashed #c2a67450;border-right:1px dashed #c2a67450}
+#home-cards [role="group"]:nth-of-type(2n):before{background:repeating-linear-gradient(0deg,#bbc4a44d 0 7px,#e1e8d357 7px 14px),repeating-linear-gradient(90deg,#aeb89966 0 7px,#e0e5d26b 7px 14px);transform:rotate(7deg)}
+#home-cards [role="group"]:after{font:10px var(--hand);color:#b7a78b}
+#home-cards [role="group"]>img{height:clamp(210px,20vw,350px);filter:saturate(.85)}
+#home-cards h3{font:20px/1.3 var(--hand);text-align:left;color:#6b5a42;margin:5px 0 0;letter-spacing:-.3px}
+.journal-card-index{font:10px/1.6 var(--hand);color:#a18c6b;display:block;text-align:left;margin-top:12px}
+.card-instructions p{font:14px/1.5 var(--hand);color:#85785f}.card-instructions p span{font:8px/1.8 var(--mono);color:#a19680}
+.card-instructions button{background:#e9dbafd9;border:1px dashed #b3a174;box-shadow:2px 3px 0 #72623c15;transform:rotate(2deg);font:12px/1.5 var(--hand);padding:7px 12px;border-radius:0;color:#7d6d50}
+.scrapbook-sticker{position:absolute;z-index:3;pointer-events:none;font-family:var(--hand)}
+.sticker-note{right:6%;top:5%;font-size:21px;line-height:1.3;padding:20px 25px;background:#f7edcb;box-shadow:3px 6px 12px #6f5b3a17;transform:rotate(7deg)}
+.sticker-note:before{content:'';position:absolute;top:-10px;left:30%;height:24px;width:50%;background:#d2bc956e;transform:rotate(-7deg)}
+.sticker-seal{bottom:10%;right:5%;width:126px;height:126px;background:#dce0c8;border:5px solid #fcfaee;outline:1px dashed #b4ba9b;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(10deg);box-shadow:3px 5px 9px #6f5b3a18;color:#7a8060}
+.sticker-seal>span{font-size:12px;line-height:1.3}.sticker-seal strong{font-size:23px;line-height:1.1;font-weight:400;text-align:center;margin:2px 0}
+.scrapbook-sprig{position:absolute;left:22%;top:5%;width:90px;height:180px;transform:rotate(-23deg);z-index:2;pointer-events:none;filter:drop-shadow(2px 3px 1px #5a5d3b15)}
+/* Sticky notes and torn pages, with legible handwriting throughout. */
+h2{font-family:var(--hand);font-weight:400;letter-spacing:-2px;line-height:1.2}
+.eyebrow{font:10px/1.8 var(--mono);letter-spacing:1.1px;color:#a28c6b}
+#about-name,.cv-identity h2{font-family:var(--hand)}
+.cv-identity>p{font:13px/1.6 var(--hand);color:#8d7f66;letter-spacing:.2px}
+.cv-contacts a{font:15px/1.7 var(--hand);background:#fbf7e9;border:1px dashed #c1b295;border-radius:1px;padding:7px 11px;transform:rotate(-2deg)}
+.cv-contacts a>span{background:#e6d1c0;border:0;color:#9c7e67}
+.cv-layout{gap:34px}
+.cv-panel{background-color:var(--note-paper,#fbf5e5);box-shadow:2px 6px 0 #a4916b0b,5px 12px 22px #76624216;padding:54px 25px 30px;border:0;border-radius:0}
+.cv-panel:before{background:repeating-linear-gradient(90deg,#d9c49b88 0 3px,#eddfc69e 3px 6px);width:63px;height:26px;top:-9px;left:15px;transform:rotate(-9deg)}
+.cv-panel:after{height:11px;bottom:-9px}
+.cv-education{--note-paper:#e9dfc6;transform:rotate(-1.4deg);background-color:var(--note-paper)}
+.cv-experience{--note-paper:#fcf7e9;background:repeating-linear-gradient(0deg,transparent 0 30px,#b9ad9030 30px 31px),#fcf7e9 url('img/watercolor-paper.svg');transform:rotate(.7deg)}
+.cv-skills{--note-paper:#e2e5cf;background-color:var(--note-paper);transform:rotate(1.2deg)}
+.cv-skills:before{background:#ccbaa46e}
+.cv-software{--note-paper:#ead8ca;background-color:var(--note-paper);transform:rotate(-1.3deg)}
+.cv-software:before{background:#b7c0a775;left:auto;right:25px}
+.cv-sticker,.cv-sticker.pink,.cv-sticker.yellow,.cv-sticker.blush{font:30px/1.15 var(--hand);padding:6px 14px;background:#fcf8eb;box-shadow:2px 4px 0 #8c78561a;border:0;color:#6a5b43;letter-spacing:-.6px;top:-22px}
+.cv-sticker:before{content:none}
+.cv-sticker.pink{background:#e8d1c3}.cv-sticker.yellow{background:#e8dcad}.cv-sticker.blush{background:#d4dbc0}
+.cv-panel h4,.cv-education h4{font:24px/1.3 var(--hand);letter-spacing:-.3px;color:#66573f}
+.cv-date{font:12px/1.7 var(--mono);letter-spacing:0;color:#9e8b6d}
+.cv-company{font:15px/1.6 var(--hand);color:#9f7f6c}
+.cv-panel article>p:not(.cv-date):not(.cv-company){font:17px/1.7 var(--hand);color:#88785f}
+.cv-panel article+article{margin-top:27px;padding-top:0;border:0}
+.cv-skills li{font:18px/1.5 var(--hand);color:#7d7157;margin-bottom:13px}
+.cv-skills li:before{content:'✓';color:#9caa7c;font-size:15px}
+.cv-languages{font:15px/1.7 var(--hand);color:#96856a}.cv-languages strong{font:17px/1.5 var(--hand);font-weight:400;color:#7a6b51}
+.cv-software li{font:14px/1.4 var(--hand);color:#8c775d}
+.software-mark,.cv-software li:nth-child(2) .software-mark,.cv-software li:nth-child(3) .software-mark,.software-mark.office{background:#fff9ee;border:1px solid #b8a48a;color:#9a8062;box-shadow:2px 3px 0 #8f765e15;border-radius:7px;transform:rotate(-3deg)}
+.cv-software li:nth-child(2) .software-mark{color:#91996b;border-color:#a5ae87;transform:rotate(3deg)}
+.cv-connect{background:#e2d9be;box-shadow:3px 7px 15px #76624213;transform:rotate(1deg)}
+.cv-connect:before{background:#bbc5a367}
+.cv-connect p{font:28px/1.2 var(--hand);color:#807055}
+.cv-connect a{font:21px var(--hand);background:#f9f2df;color:#967961;border:1px dashed #b8a17e;transform:rotate(-5deg);padding:5px 9px}
+/* The gallery is a taped collection of photographs, not a UI card grid. */
+.section-head{border:0;padding-top:0}
+.section-head h2{font:clamp(43px,4.4vw,68px)/1.2 var(--hand)}
+.section-head>p{font:17px/1.6 var(--hand);color:#9a886b}
+.filters button{font:14px var(--hand);border:0;background:#f9f3e3;padding:8px 16px;color:#9a886b;box-shadow:2px 3px 0 #8c78560c;transform:rotate(-2deg);border-radius:0}
+.filters button:nth-child(2n){transform:rotate(2deg)}
+.filters .selected{background:#dce1c6;color:#707952;border-bottom:0}
+.work,.work:nth-child(even){transform:rotate(-1.5deg)}.work:nth-child(even){transform:rotate(1.5deg)}
+.work:before{height:28px;width:28%;top:-11px;left:36%;background:#d0bb9573;transform:rotate(-6deg)}
+.work:nth-child(even):before{background:repeating-linear-gradient(45deg,#acb49a60 0 4px,#dce2cd70 4px 8px)}
+.work-image{border:13px solid #fffaf0;box-shadow:3px 7px 17px #6f5b3a1b}
+.work-caption,.view{background:#fffaf0}
+.work-caption{border:0;padding:16px 18px 20px}
+.work-caption h3{font:25px/1.3 var(--hand);color:#756044;letter-spacing:-.4px}
+.work-caption p{font:11px/1.7 var(--mono);color:#a08e72;letter-spacing:0}
+.work-caption>span{font:18px var(--hand);color:#c0aa84}
+.view{font:12px var(--hand);color:#a08662}
+/* Contact is a handwritten letter on an envelope. */
+.contact>.wrap{background:#fcf7e7 url('img/watercolor-paper.svg');border:0;box-shadow:6px 12px 0 #ddd1b750,9px 18px 24px #76624214;transform:rotate(-1.3deg);padding:65px 45px}
+.contact>.wrap:before{background:repeating-linear-gradient(90deg,#c4ccb270 0 7px,#e2e8d36b 7px 14px);height:30px;width:100px;top:-11px;left:38%;right:auto;transform:rotate(6deg)}
+.contact h2{font:clamp(57px,6.5vw,100px)/1.12 var(--hand);letter-spacing:-2px}
+.contact>div>p:not(.eyebrow){font:20px/1.6 var(--hand);color:#9c8869}
+.contact-star{color:#b8bd93;width:40px}
+.button{background:#dce1c7;color:#7d8661;border:1px dashed #aab18a;padding:12px 20px;font:16px var(--hand);letter-spacing:0;transform:rotate(-2deg);box-shadow:2px 4px 0 #7f895a12}
+.button:hover{background:#ced7b4;color:#69724d}
+dialog{background:#fff9ed;border:1px solid #c3b597;box-shadow:6px 12px 35px #6f5b3a30}
+.dialog-head h2{font:28px var(--hand)}.close{font:14px var(--hand);border:1px dashed #bcae90;background:#eee5cd;color:#8b7656}
+@media(max-width:1100px) and (min-width:761px){.sticker-seal{width:105px;height:105px;right:4%;bottom:12%}.sticker-seal strong{font-size:20px}.scrapbook-sprig{left:25%;width:65px}}
 @media(max-width:760px){
-  body:before{background-size:80px 100%}
-  .journal-edition{top:25px;left:20px;right:20px;font-size:7px;letter-spacing:.8px}
-  .journal-margin{right:9px;top:11%;font-size:7px;letter-spacing:1.5px}
-  .home-intro h1{font-size:clamp(90px,25vw,165px);letter-spacing:-4px}
-  .card-home:before{right:3%;top:10%;width:50%;height:28%}
-  .card-home:after{left:3%;width:47%;bottom:20%;height:28%}
-  #home-cards [role="group"]{padding:12px 12px 19px}
+  body:before{background-position:center;background-size:auto 100svh}
+  .home-intro h1{font-size:clamp(84px,23vw,145px);letter-spacing:-3px}
+  #home-cards [role="group"]{padding:14px 12px 20px}
   #home-cards [role="group"]>img{height:155px}
-  #home-cards h3{font-size:17px;margin-top:5px;letter-spacing:-.3px}
-  .journal-card-index{font-size:6px;letter-spacing:.5px;padding-top:10px}
-  #home-cards [role="group"]:before{height:17px;top:-6px}
-  .card-instructions p{font-size:11px}.card-instructions p span{font-size:8px}
-  .card-instructions button{font-size:9px}
-  .navigation-toggle,.wheel-panel{background:#f7f4ebf7;border:1px solid #a89f8a60;box-shadow:0 6px 22px #38332912}
-  .navigation-toggle{font:10px var(--mono);letter-spacing:1px;padding:15px 18px}
-  .navigation-toggle>span:first-child{font:italic 22px var(--editorial);color:var(--red)}
-  .navigation-caption{font-size:7px;border:0;width:auto;left:auto;padding:0}
-  .navigation-done{font:10px var(--mono);color:var(--red)}
-  .cv-page{padding-top:45px}
-  .cv-panel{padding:48px 25px 28px}
-  .cv-panel h4{font-size:25px}.cv-panel article>p:not(.cv-date):not(.cv-company){font-size:17px}
-  .cv-date{font-size:11px}.cv-company{font-size:14px}.cv-skills li{font-size:18px}
-  .cv-sticker,.cv-sticker.pink,.cv-sticker.yellow,.cv-sticker.blush{font-size:29px}
-  .cv-software li{font-size:11px}.cv-connect p{font-size:29px}
-  .cv-left{gap:46px}.cv-right{gap:46px}
-  .section-head{padding-top:18px}.section-head h2{font-size:46px}
-  .work-caption h3{font-size:24px}
-  .contact>.wrap{padding:50px 25px;transform:none}
-  .contact h2{font-size:62px;letter-spacing:-2.5px}
-  .contact>div>p:not(.eyebrow){font-size:16px}
+  #home-cards h3{font-size:16px}
+  #home-cards [role="group"]:before{height:23px;top:-9px}
+  .journal-card-index{font-size:9px;margin-top:10px}
+  .sticker-note{font-size:14px;right:7%;top:5%;padding:12px 17px}
+  .sticker-note:before{width:45px;height:19px;left:30%;top:-8px}
+  .sticker-seal{width:86px;height:86px;bottom:17%;right:5%;border-width:3px;z-index:1}
+  .sticker-seal>span{font-size:9px}.sticker-seal strong{font-size:17px}
+  .scrapbook-sprig{left:7%;top:5%;width:47px;height:100px}
+  .card-instructions p{font-size:12px;max-width:210px}.card-instructions p span{font-size:8px}
+  .card-instructions button{font-size:11px;padding:7px 10px}
+  .navigation-toggle,.wheel-panel{background:#faf5e8f2;border:1px solid #c5b8957d;box-shadow:3px 6px 18px #76624217;border-radius:2px;color:#8b7857}
+  .navigation-toggle{font:13px var(--hand);letter-spacing:0;padding:14px 18px}
+  .navigation-toggle>span:first-child{font:23px var(--hand);color:#8f9870}
+  .navigation-caption{background:transparent;box-shadow:none;transform:none;padding:0;font:12px var(--hand);width:auto;max-width:none}
+  .navigation-caption:before{display:none}
+  .navigation-done{font:13px var(--hand);color:#8f9870;border-color:#c1c9a9}
+  .cv-layout{gap:43px}.cv-page{padding-top:43px}
+  .cv-panel{padding:50px 24px 28px}.cv-panel h4{font-size:25px}.cv-panel article>p:not(.cv-date):not(.cv-company){font-size:18px}
+  .cv-date{font-size:11px}.cv-company{font-size:16px}.cv-skills li{font-size:19px}
+  .cv-sticker,.cv-sticker.pink,.cv-sticker.yellow,.cv-sticker.blush{font-size:31px}
+  .cv-software li{font-size:12px}.cv-connect p{font-size:29px}
+  .section-head h2{font-size:43px}.section-head>p{font-size:16px}
+  .filters button{font-size:12px;padding:8px 12px}
+  .work-caption h3{font-size:24px}.work-caption p{font-size:10px}
+  .contact>.wrap{padding:50px 25px;transform:rotate(-.5deg)}
+  .contact h2{font-size:56px}.contact>div>p:not(.eyebrow){font-size:18px}.button{font-size:14px}
 }
+@media(min-width:761px){.wheel-panel{isolation:isolate}.wheel-panel:before{content:'';position:absolute;left:24px;right:22px;top:30%;height:43%;background:#fbf7e5c9;box-shadow:2px 5px 10px #77633e0e;transform:rotate(-2deg);z-index:-1;clip-path:polygon(1% 1%,98% 0,100% 98%,89% 99%,77% 98%,63% 100%,48% 98%,33% 99%,17% 98%,0 100%)}.navigation-hint{background:#faf5e2c9;padding:5px 8px}}
+.card-instructions p{background:#fbf5e3d9;padding:6px 10px;box-shadow:1px 3px 4px #77633e0a;color:#887353}
